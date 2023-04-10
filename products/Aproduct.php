@@ -1,5 +1,5 @@
 <?php 
-include '../connection.php';
+include '../connection/connection.php';
 // fetching data
 $table = array();
 
@@ -10,10 +10,10 @@ while($row=mysqli_fetch_assoc($query)){
 
 // sending Data
 if (mysqli_num_rows($query)>0){
-    $data = array('responce' =>'1','message' => 'Success','table'=>$table);
+    $data = array('response' =>'1','message' => 'Success','table'=>$table);
 }else{
-    $data = array('responce' =>'0','message' => 'Failure');
+    $data = array('response' =>'0','message' => 'Failure');
 }
-$responce = json_encode($data);
-echo $responce;
+$response = json_encode($data);
+echo $response;
 ?>
